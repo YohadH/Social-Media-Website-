@@ -4,10 +4,14 @@ import 'semantic-ui-css/semantic.min.css';
 import './app/layout/styles.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
+import { store, storeContext } from './app/stores/store';
 
 ReactDOM.render(
+  //here we are warpping the app with our store that he will make throw it as a child
+  <storeContext.Provider value={store}>
     <App />,
-  document.getElementById('root')
+  </storeContext.Provider>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
